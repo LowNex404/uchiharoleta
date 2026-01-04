@@ -1,0 +1,194 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1b1f4a, #05060f);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 15px;
+}
+
+.wheel-wrapper {
+  position: relative;
+}
+
+canvas {
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 40px rgba(0,0,0,.8);
+}
+
+.pointer {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-bottom: 26px solid red;
+}
+
+.saldo {
+  margin: 15px 0;
+  font-size: 18px;
+}
+
+input, button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 6px;
+  border: none;
+}
+
+button {
+  background: #2b6cff;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1f52cc;
+}
+
+/* =====================
+   POPUP RESULTADO
+===================== */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup {
+  width: 90%;
+  max-width: 360px;
+  background: linear-gradient(145deg, #2a2a2a, #1b1b1b);
+  border-radius: 12px;
+  padding: 16px;
+  position: relative;
+  color: #fff;
+  animation: popIn 0.3s ease-out;
+}
+
+/* BORDA POR RARIDADE */
+.popup.comum {
+  border: 2px solid #777;
+  box-shadow: 0 0 10px #777;
+}
+.popup.raro {
+  border: 2px solid #3b7bff;
+  box-shadow: 0 0 14px #3b7bff;
+}
+.popup.epico {
+  border: 2px solid #9a4dff;
+  box-shadow: 0 0 16px #9a4dff;
+}
+.popup.lendario {
+  border: 2px solid #ffcc33;
+  box-shadow: 0 0 18px #ffcc33;
+}
+
+/* BOTÃO FECHAR */
+.popup .close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  opacity: 0.7;
+}
+.popup .close:hover {
+  opacity: 1;
+}
+
+.popup h2 {
+  margin: 10px 0;
+}
+
+.popup .meta {
+  font-size: 13px;
+  color: #bbb;
+  margin-bottom: 10px;
+}
+
+.popup button {
+  background: #25D366;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  color: #000;
+}
+
+.popup .hint {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #aaa;
+}
+
+/* ANIMAÇÃO */
+@keyframes popIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/* =====================
+   POPUP SUCESSO (CÓDIGO)
+===================== */
+.popup.sucesso {
+  border: 2px solid #25D366;
+  box-shadow: 0 0 16px rgba(37, 211, 102, 0.8);
+}
+
+.popup.sucesso h2 {
+  color: #25D366;
+}
+/* =====================
+   POPUP ERRO / AVISO
+===================== */
+.popup.erro {
+  border: 2px solid #ff3b3b;
+  box-shadow: 0 0 16px rgba(255, 59, 59, 0.8);
+}
+
+.popup.aviso {
+  border: 2px solid #ffcc33;
+  box-shadow: 0 0 16px rgba(255, 204, 51, 0.8);
+}
+
+.popup.erro h2 {
+  color: #ff3b3b;
+}
+
+.popup.aviso h2 {
+  color: #ffcc33;
+}

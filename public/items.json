@@ -1,0 +1,47 @@
+[
+  {
+    "name": "100 Diamantes",
+    "chance": 95,
+    "colors": ["#777777", "#555555"]
+  },
+  {
+    "name": "500 Diamantes",
+    "chance": 5,
+    "colors": ["#3b7bff", "#1f4ccc"]
+  },
+  {
+    "name": "60 Diamantes",
+    "chance": 70,
+    "colors": ["#777777", "#555555"]
+  },
+  {
+    "name": "Conta Aleatória",
+    "chance": 5,
+    "colors": ["#3b7bff", "#1f4ccc"]
+  },
+  {
+    "name": "Pack de Sensibilidade",
+    "chance": 85,
+    "colors": ["#777777", "#555555"]
+  },
+  {
+    "name": "Conta Básica",
+    "chance": 0.001,
+    "colors": ["#9a4dff", "#5d1fb3"]
+  },
+  {
+    "name": "Pix Premiado",
+    "chance": 35,
+    "colors": ["#777777", "#555555"]
+  },
+   {
+    "name": "Conta com Angelical",
+    "chance": 0.001,
+    "colors": ["#9a4dff", "#5d1fb3"]
+  },
+  {
+    "name": "Conta Antiga",
+    "chance": 0.0001,
+    "colors": ["#ffcc33", "#cc9a00"]
+  }
+]
