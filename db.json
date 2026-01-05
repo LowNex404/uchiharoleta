@@ -1,10 +1,20 @@
 {
   "users": {
-    "guest": { "saldo": 0 }
+    "guest": {
+      "saldo": 0
+    }
   },
   "codes": [
-    { "code": "GRATIS", "amount": 1, "used": false },
-    { "code": "FREE", "amount": 1, "used": false }
+    {
+      "code": "TEST",
+      "amount": 1,
+      "used": true
+    },
+    {
+      "code": "CODE001",
+      "amount": 1,
+      "used": false
+    }
   ],
-  "spins": 0
+  "spins": 1
 }

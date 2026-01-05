@@ -43,7 +43,8 @@ function updateUI() {
       <input id="codeInput" placeholder="Código de resgate">
       <button id="redeemBtn">Resgatar código</button>
       <a class="whatsapp" href="https://wa.me/5573991345299" target="_blank">
-        Comprar código
+
+        Não possui código? Adquira já!
       </a>
     `;
     document.getElementById("redeemBtn").onclick = redeemCode;
