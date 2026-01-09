@@ -4,11 +4,13 @@
     "chance": 90,
     "colors": ["#777777", "#555555"]
   },
+
   {
     "name": "500 Diamantes",
     "chance": 5,
     "colors": ["#00ffff", "#17c1f3"]
   },
+
   {
     "name": "60 Diamantes",
     "chance": 35,
@@ -19,6 +21,7 @@
     "chance": 0.001,
     "colors": ["#9a4dff", "#5d1fb3"]
   },
+
   {
     "name": "Pack de Sensibilidade",
     "chance": 85,
@@ -29,11 +32,13 @@
     "chance": 5,
     "colors": ["#00ffff", "#17c1f3"]
   },
+
   {
     "name": "Pix Premiado",
     "chance": 25,
     "colors": ["#777777", "#555555"]
   },
+
    {
     "name": "Conta com Angelical",
     "chance": 0.001,
@@ -44,6 +49,7 @@
     "chance": 5,
     "colors": ["#777777", "#555555"]
   },
+  
   {
     "name": "Conta Antiga",
     "chance": 0.0001,

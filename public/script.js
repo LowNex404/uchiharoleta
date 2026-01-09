@@ -1,6 +1,5 @@
 const canvas = document.getElementById("wheel");
 const ctx = canvas.getContext("2d");
-
 const saldoSpan = document.getElementById("saldo");
 const actions = document.getElementById("actions");
 
