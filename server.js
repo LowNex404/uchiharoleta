@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const fs = require("fs");
 const { v4: uuid } = require("uuid");
+require("dotenv").config(); // 🔹 Carrega as variáveis do .env
 
 const app = express();
 app.use(cors());
@@ -11,10 +12,11 @@ app.use(express.static("public"));
 const DB_FILE = "./db.json";
 
 function readDB() {
-  return JSON.parse(fs.readFileSync(DB_FILE));
+  return JSON.parse(fs.readFileSync(DB_FILE, "utf-8"));
 }
+
 function writeDB(data) {
-  fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2));
+  fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2), "utf-8");
 }
 
 /* =====================
@@ -47,10 +49,7 @@ app.post("/api/redeem", (req, res) => {
    GIRAR ROLETA
 ===================== */
 app.post("/api/spin", (req, res) => {
-  const items = JSON.parse(
-    fs.readFileSync("./public/items.json", "utf-8")
-  );
-
+  const items = JSON.parse(fs.readFileSync("./public/items.json", "utf-8"));
   const db = readDB();
 
   if (db.users.guest.saldo <= 0)
@@ -68,7 +67,6 @@ app.post("/api/spin", (req, res) => {
     }
   }
 
-  // 🔥 LOG DO BACKEND
   console.log("🎯 GIRO:", {
     premio: prize.name,
     chance: prize.chance,
@@ -91,8 +89,15 @@ app.post("/api/spin", (req, res) => {
 ===================== */
 app.post("/api/admin/add-code", (req, res) => {
   const { code, amount, secret } = req.body;
-  if (secret !== process.env.ADMIN_KEY)
+
+  // 🔹 Verifica a chave do .env
+  if (!process.env.ADMIN_KEY) {
+    return res.status(500).json({ error: "ADMIN_KEY não definida no servidor" });
+  }
+
+  if (secret !== process.env.ADMIN_KEY) {
     return res.status(403).json({ error: "Acesso negado" });
+  }
 
   const db = readDB();
   db.codes.push({ code, amount, used: false });
@@ -102,5 +107,4 @@ app.post("/api/admin/add-code", (req, res) => {
 });
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log("🔥 Server rodando"));
-
+app.listen(PORT, () => console.log(`🔥 Server rodando na porta ${PORT}`));

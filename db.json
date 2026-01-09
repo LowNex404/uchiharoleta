@@ -6,7 +6,8 @@
   },
   "codes": [
   { "code": "UCHTEST", "amount": 1, "used": false },
-  { "code": "UCHTEST2", "amount": 2, "used": false }
+  { "code": "UCHTEST2", "amount": 2, "used": false },
+  { "code": "UCHVIP", "amount": 100, "used": false}
   ],
   "spins": 10
 }
